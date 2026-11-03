@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>alex's catch collection</title>
+
+    <style>
+
+        body {
+            font-family: Helvetica Neue, sans-serif;
+            background-color: #E2EFF6;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #364023;
+        }
+
+        /* IMAGE CONTAINER */
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* INDIVIDUAL ITEMS */
+
+        .item {
+            position: relative;
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        /* REMOVE DEFAULT DETAILS MARKER */
+
+        .item summary {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* IMAGE HOVER EFFECT */
+
+        .item img:hover {
+            transform: scale(1.1);
+        }
+
+        /* HIDDEN DESCRIPTION */
+
+        .description {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: 135px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: 180px;
+            font-size: 13px;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+
+        /* SHOW DESCRIPTION WHEN TAPPED */
+
+        .item[open] .description {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* DESKTOP HOVER EFFECT */
+
+        @media (hover: hover) {
+            .item:hover .description {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        /* MOBILE AND TABLET ADJUSTMENTS */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                gap: 25px;
+            }
+
+            .item {
+                width: 140px;
+            }
+
+            .description {
+                width: 160px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>alex's catch collection</h1>
+
+    <p> see fish! </p>
+
+    <div class="container">
+
+        <details class="item">
+
+            <summary>
+                <img src="photo1.jpg" alt="HTML">
+            </summary>
+
+            <div class="description">
+                HTML - Used to structure webpages.
+            </div>
+
+        </details>
+
+        <details class="item">
+
+            <summary>
+                <img src="photo2.jpg" alt="CSS">
+            </summary>
+
+            <div class="description">
+                CSS - Used to style and design webpages.
+            </div>
+
+        </details>
+
+        <details class="item">
+
+            <summary>
+                <img src="photo3.jpg" alt="JavaScript">
+            </summary>
+
+            <div class="description">
+                JavaScript - Used to add interactivity.
+            </div>
+
+        </details>
+
+        <details class="item">
+
+            <summary>
+                <img src="photo4.jpg" alt="More images">
+            </summary>
+
+            <div class="description">
+                Add your own description here!
+            </div>
+
+        </details>
+
+    </div>
+
+</body>
+
+</html>
